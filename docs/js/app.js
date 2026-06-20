@@ -234,13 +234,14 @@
 
     var defs = [
       { icon: "dataset",    label: "Data",          href: L.data },
-      { icon: "demo",    label: "Demo",          href: demoHref },
+      // { icon: "demo",    label: "Demo",          href: demoHref },
       { icon: "pdf",   label: "IEEE Xplore",   href: L.ieeexplore },
       { icon: "arxiv", label: "PubMed",        href: L.pubmed },
+      { icon: "arxiv", label: "PubMed Central",        href: L.pubmedCentral },
       { icon: "slides",  label: "IEEE VIS", href: L.ieeevis },
       { icon: "slides",  label: "ISMB BioVis",   href: L.ismb },
       { icon: "results", label: "Supplement",    href: L.supplement },
-      { icon: "video", label: "Video",         href: L.video,}
+      { icon: "video", label: "Presentation Video",         href: L.video,}
     ];
 
     // User-defined chips from config (e.g. a YouTube link). Inserted before the
@@ -357,7 +358,11 @@
     var d = C.demo || {};
     var wrap = $("#videoWrap"), frame = $("#video");
     if (frame && has(d.youtubeId)) {
-      frame.src = "https://www.youtube-nocookie.com/embed/" + d.youtubeId;
+      var src = "https://www.youtube-nocookie.com/embed/" + d.youtubeId;
+      if (d.start != null && d.start !== "") {
+        src += (src.indexOf("?") === -1 ? "?" : "&") + "start=" + parseInt(d.start, 10);
+      }
+      frame.src = src;
       if (wrap) wrap.hidden = false;
     }
     var gbox = $("#gifs");
@@ -422,13 +427,6 @@
     if (wrap) wrap.hidden = false;
   });
 
-  // Turn a user-supplied PDF / landing-page URL into something embeddable.
-  //   • arxiv abs|pdf links        -> direct https://arxiv.org/pdf/<id>  (frames natively)
-  //   • OSF preprint/landing links -> Google Docs Viewer wrapping the OSF /download URL
-  //       (OSF forces a file download and blocks framing, so a bare iframe shows
-  //        nothing; the Docs Viewer renders it server-side in a frame-friendly page)
-  //   • local files / direct .pdf  -> used as-is (frames natively)
-  // engine: "auto" (default) | "direct" (always native iframe) | "google" (always Docs Viewer)
   function resolvePreprint(url, engine) {
     var u = String(url).trim();
 

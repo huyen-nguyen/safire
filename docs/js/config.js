@@ -16,46 +16,40 @@ const CONFIG = {
 
   /* ---------- 0. LOOK & FEEL  (leave any value "" to keep the default) */
   theme: {
-    colorMain:   "#802434",       // burgundy brand colour (matches site title)
-    colorMainDark:   "#5c1a26",
-    colorSecondary:   "#202f80",
-    colorAccent: "#1a3e96",       // hover/accent burgundy
+    colorMain:   "#1a3e96",       // burgundy brand colour (matches site title)
+    colorMainDark:   "#202f80",
+    colorSecondary:   "#6c1f2d",
+    colorAccent: "#8d283a",       // hover/accent burgundy
   },
 
   /* ---------- 0b. BRAND LOGO  (optional) ------------------------------ */
   // Put an image in assets/ to replace the default coloured mark in the
   // header + footer. `link` is where clicking the logo/title takes you.
   brandLogo: {
-    src:  "https://raw.githubusercontent.com/gosling-lang/geranium/refs/heads/main/assets/logos-03.png",            // e.g. "assets/logo.svg"   ("" keeps the default mark)
-    link: "#top",        // e.g. "https://your-lab.org"  (default: back to top)
-    alt:  "VizName",
+    src:  "assets/safire_logo.svg",            // e.g. "assets/logo.svg"   ("" keeps the default mark)
+    link: "#",        // e.g. "https://your-lab.org"  (default: back to top)
+    alt:  "Safire",
   },
 
   /* ---------- 1. PAPER ---------------------------------------- */
-  brand:        "Viz Name",                 // short name in nav + footer
-  badge:        "IEEE VIS 2026 · Bioinformatics & Visualization", // small pill above title
-  title:        'Through the WordStream Glass: <em>Revisiting</em> Quantitative Encoding ',
-  titleEm:      'for <span class="thin">Qualitative</span> Learning Analytics',
-  tagline:      "A scalable, open-source framework that turns millions of genomic features into interpretable visual insights, helping researchers find really cool patterns.",
-  venue:        "IEEE Transactions on Visualization and Computer Graphics",
-  year:         "2026",
-  doi:          "10.0000/XXXXXXX",
+  brand:        "Safire",                 // short name in nav + footer
+  badge:        "IEEE VIS 2025", // small pill above title
+  title:        'Safire: Similarity Framework for ',
+  titleEm:      'Visualization Retrieval',
+  tagline:      "A conceptual framework for defining visualization similarity in retrieval systems by organizing *what* to compare (criteria) and *how* comparisons are performed (representation modalities).",
+  venue:        "IEEE Visualization and Visual Analytics (VIS)",
+  year:         "2025",
+  doi:          "10.1109/VIS60296.2025.00055",
 
   /* ---------- 2. AUTHORS -------------------------------------- */
   // `aff` lists the affiliation numbers (see `affiliations` below).
   // Any link left "" is hidden for that author.
   authors: [
-    // { name: "Huyen N. Nguyen",   aff: [1],    website: "https://huyennguyen.com/", scholar: "https://scholar.google.com/citations?user=tsrO-ZgAAAAJ&hl=en", orcid: "https://orcid.org/0000-0001-6554-2327" },
-    // { name: "Nils Gehlenborg", aff: [1], website: "https://hidivelab.org/team/members/nils-gehlenborg/", scholar: "https://scholar.google.com/citations?user=YEcBVFAAAAAJ&hl=en"},
-    { name: "Author One",   aff: [1],    website: "#", scholar: "#", orcid: "#" },
-    { name: "Author Two",   aff: [2],    website: "#", scholar: "#", orcid: "#" },
-    { name: "Author Three", aff: [1, 3], website: "#", scholar: "#", orcid: "#" },
+    { name: "Huyen N. Nguyen",   aff: [1],    website: "https://huyennguyen.com/", scholar: "https://scholar.google.com/citations?user=tsrO-ZgAAAAJ&hl=en", orcid: "https://orcid.org/0000-0001-6554-2327" },
+    { name: "Nils Gehlenborg", aff: [1], website: "https://hidivelab.org/team/members/nils-gehlenborg/", scholar: "https://scholar.google.com/citations?user=YEcBVFAAAAAJ&hl=en", orcid: "https://orcid.org/0000-0003-0327-8297"},
   ],
   affiliations: [
-    // "Dept. of Biomedical Informatics, Harvard Medical School, Harvard University",   // 1
-    "Dept. of Computational Biology, University A",   // 1
-    "Institute of Data Visualization, University B",  // 2
-    "Lab C, Research Center",                         // 3
+    "Harvard Medical School, Harvard University",   // 1
   ],
 
   /* ---------- 3. LINKS  (leave "" to hide the button) --------- */
@@ -66,14 +60,15 @@ const CONFIG = {
     //   • an OSF link     -> "https://osf.io/preprints/osf/zatw9_v7"  (see note in §10)
     //   • a local file    -> "assets/preprint.pdf"
     pdf:        "https://arxiv.org/pdf/2510.16662",
-    code:       "#",   // GitHub repository
-    data:       "#",
-    ieeexplore: "#",   // IEEE Xplore publication page
-    pubmed:     "#",   // PubMed entry
-    ieeevis:    "#",   // IEEE VIS 2026 presentation details
-    ismb:       "#",
-    supplement: "#",
-    video:      "#",
+    code:       "",   // GitHub repository
+    data:       "",
+    pubmed:     "https://pubmed.ncbi.nlm.nih.gov/42292323/",
+    pubmedCentral:     "https://pmc.ncbi.nlm.nih.gov/articles/PMC13260569/",
+    ieeexplore: "https://ieeexplore.ieee.org/abstract/document/11298749",   // IEEE Xplore publication page
+    ieeevis:    "https://ieeevis.org/year/2025/program/paper_ba183a14-a911-4177-8f18-c35ee2220c67.html",   // IEEE VIS 2026 presentation details
+    ismb:       "",
+    supplement: "",
+    video:      "https://youtu.be/-r69u3gOTsk?si=rEp5X5uc3F8qz3Gm&t=4161",
     license:    "",   // license link used in footer
 
     // Leave "" to just use `pdf`.
@@ -81,15 +76,6 @@ const CONFIG = {
     // (e.g. OSF), e.g. "assets/preprint.pdf".
     preprintPdf: "", // local file
   },
-
-  /* ---------- 3b. CUSTOM CHIPS  (extra quick-link buttons) ---- */
-  customChips: [
-    // { icon: "youtube", label: "YouTube", href: "https://www.youtube.com/watch?v=VIDEO_ID" },
-    { icon: "star", label: "Custom Chip", href: "https://your-lab.org/project" },
-    // List of icons: https://huyen-nguyen.github.io/iframe/icons
-    // No matching icon in icons.js? Paste raw SVG instead:
-    // { icon: "<svg viewBox='0 0 24 24' width='24' height='24'>...</svg>", label: "Custom", href: "#" },
-  ],
 
   /* ---------- 4. ABSTRACT  (one string per paragraph) -------- */
   abstract: [
@@ -99,19 +85,20 @@ const CONFIG = {
 
   /* ---------- 5. CITATION ------------------------------------- */
   bibtex:
-      `@article{author2026vizname,
-  title   = {Interactive Visualization for Genomic Data Exploration},
-  author  = {One, Author and Two, Author and Three, Author},
-  journal = {IEEE Transactions on Visualization and Computer Graphics},
-  year    = {2026},
-  doi     = {10.0000/XXXXXXX}
+      `@INPROCEEDINGS{nguyen2025safire,
+  author={Nguyen, Huyen N. and Gehlenborg, Nils},
+  booktitle={2025 IEEE Visualization and Visual Analytics (VIS)}, 
+  title={Safire: Similarity Framework for Visualization Retrieval}, 
+  year={2025},
+  pages={246-250},
+  doi={10.1109/VIS60296.2025.00055}}
 }`,
 
   /* ---------- 6a. TEASER FIGURE  (shown under Highlights) ----- */
   teaser: {
-    src:     "https://huyennguyen.com/assets/images/papers/Dissertation.png",   // e.g. "assets/teaser.png"   ("" hides it)
-    alt:     "System overview of VizName",
-    caption: "Overview of the VizName pipeline — from raw multi-omic input to interactive visual exploration.",
+    src:     "assets/teaser.png",   // e.g. "assets/teaser.png"   ("" hides it)
+    alt:     "System overview of Safire",
+    caption: "Safire characterizes  comparison  criteria  determining **what** aspects  of  visualizations  should  be  compared, while representation modalities define **how** these visualizations are represented for comparison. Visualization determinism: the degree to which a representation format guarantees a single, consistent visual rendering",
   },
   /* ---------- 6b. HIGHLIGHTS  (cards; add/remove freely) ------- */
 
@@ -128,11 +115,7 @@ const CONFIG = {
 
   /* ---------- 7. DEMO ----------------------------------------- */
   demo: {
-    youtubeId: "VIDEO_ID",     // just the id, e.g. "dQw4w9WgXcQ"  ("" hides the player)
-    gifs: [                    // drop files in assets/  ("" / empty list hides this row)
-      { src: "assets/demo-1.gif", caption: "Fluid zoom & filter across a genomic region." },
-      { src: "assets/demo-2.gif", caption: "Side-by-side multi-sample comparison." },
-    ],
+    youtubeId: "-r69u3gOTsk", start: 4161      // just the id, e.g. "dQw4w9WgXcQ"  ("" hides the player)
   },
 
   /* ---------- 8. LOGOS  (institutional / conference) ---------- */
